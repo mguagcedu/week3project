@@ -15,3 +15,9 @@ npm start
 Below is how the form looks after submitting employees (data persisted via localStorage):
 
 ![Form & LocalStorage Demo](public/completion.jpg)
+
+## Demo Screenshot
+
+Below is how the form looks after submitting employees (data persisted via localStorage):
+
+![Form & LocalStorage Demo](public/completion.jpg)
