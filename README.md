@@ -10,7 +10,7 @@ Clone the repo and run:
 npm install
 npm start
 
-## Demo Screenshot
+## "C:\Users\gomez\OneDrive - University of Arizona Global Campus\Desktop\React Projects\week3project\public\completion.jpg"
 
 Below is how the form looks after submitting employees (data persisted via localStorage):
 
