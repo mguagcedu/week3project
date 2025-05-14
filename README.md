@@ -9,3 +9,9 @@ Clone the repo and run:
 ```bash
 npm install
 npm start
+
+## Demo Screenshot
+
+Below is how the form looks after submitting employees (data persisted via localStorage):
+
+![Form & LocalStorage Demo](public/completion.jpg)
