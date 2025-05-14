@@ -6,11 +6,13 @@ import './components/EmployeeForm.css';
 function App() {
   const [employees, setEmployees] = useState([]);
 
+  // Load saved employees from localStorage on mount
   useEffect(() => {
     const stored = localStorage.getItem('employees');
     if (stored) setEmployees(JSON.parse(stored));
   }, []);
 
+  // Save to localStorage whenever employees change
   useEffect(() => {
     localStorage.setItem('employees', JSON.stringify(employees));
   }, [employees]);
