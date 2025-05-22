@@ -1,4 +1,4 @@
-# Week 3 Project: React Employee Form with Local Storage
+# Week 1-5 Project: React Employee Form with Local Storage
 
 This project implements a simple React application where you can add new employees via a form and have the entries persist in your browser’s local storage.
 
