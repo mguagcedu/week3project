@@ -1,5 +1,5 @@
 import { useLocalStorage } from './hooks/useLocalStorage'
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import EmployeeForm from './components/EmployeeForm';
 import EmployeeList from './components/EmployeeList';
 import './components/EmployeeForm.css';
@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const stored = localStorage.getItem('employees');
     if (stored) setEmployees(JSON.parse(stored));
-  }, []);
+  }, [setEmployees]);
 
   // Save to localStorage whenever employees change
   useEffect(() => {
