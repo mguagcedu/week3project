@@ -1,10 +1,11 @@
+import { useLocalStorage } from './hooks/useLocalStorage'
 import React, { useState, useEffect } from 'react';
 import EmployeeForm from './components/EmployeeForm';
 import EmployeeList from './components/EmployeeList';
 import './components/EmployeeForm.css';
 
 function App() {
-  const [employees, setEmployees] = useState([]);
+  const [employees, setEmployees] = useLocalStorage('employees', [])
 
   // Load saved employees from localStorage on mount
   useEffect(() => {
