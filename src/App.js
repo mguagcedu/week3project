@@ -1,32 +1,21 @@
-import { useLocalStorage } from './hooks/useLocalStorage'
-import React, { useEffect } from 'react';
+import ThemeToggle from "./components/ThemeToggle";
+import './advancedForm.css';
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import EmployeeForm from './components/EmployeeForm';
 import EmployeeList from './components/EmployeeList';
-import './components/EmployeeForm.css';
 
 function App() {
-  const [employees, setEmployees] = useLocalStorage('employees', [])
-
-  // Load saved employees from localStorage on mount
-  useEffect(() => {
-    const stored = localStorage.getItem('employees');
-    if (stored) setEmployees(JSON.parse(stored));
-  }, [setEmployees]);
-
-  // Save to localStorage whenever employees change
-  useEffect(() => {
-    localStorage.setItem('employees', JSON.stringify(employees));
-  }, [employees]);
-
-  const addEmployee = (employee) => {
-    setEmployees(prev => [...prev, employee]);
-  };
-
   return (
-    <div className="form-container">
-      <h2>New Employee Form</h2>
-      <EmployeeForm addEmployee={addEmployee} />
-      <EmployeeList employees={employees} />
+    <div className="App">
+      <nav>
+        <Link to="/">Form</Link> | <Link to="/list">Employee List</Link>
+      </nav>
+<ThemeToggle />
+      <Routes>
+        <Route path="/" element={<EmployeeForm />} />
+        <Route path="/list" element={<EmployeeList />} />
+      </Routes>
     </div>
   );
 }

@@ -1,0 +1,152 @@
+
+:root {
+  --primary-color: #007bff;
+  --background-light: #f0f0f0;
+  --background-dark: #121212;
+  --text-light: #333;
+  --text-dark: #eee;
+  --card-background-light: #fff;
+  --card-background-dark: #1e1e1e;
+}
+
+/* Base reset and font */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-light);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.App {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+/* Form styling */
+form.form-card {
+  background: var(--card-background-light);
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.8s ease-in-out;
+  transition: all 0.3s ease, background-color 0.3s;
+}
+
+body.dark-mode form.form-card {
+  background: var(--card-background-dark);
+}
+
+form h2 {
+  margin-top: 0;
+  font-size: 24px;
+  animation: slideIn 0.6s ease-in-out;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+form input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+form button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Table styling */
+.employee-table {
+  margin-top: 40px;
+  background-color: var(--card-background-light);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s;
+}
+
+body.dark-mode .employee-table {
+  background-color: var(--card-background-dark);
+}
+
+.employee-table h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.employee-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employee-table th,
+.employee-table td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.employee-table th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  form.form-card {
+    padding: 20px;
+  }
+
+  form h2 {
+    font-size: 20px;
+  }
+
+  form input, form button {
+    font-size: 14px;
+  }
+}

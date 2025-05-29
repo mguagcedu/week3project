@@ -1,31 +1,25 @@
 import React from 'react';
-import './EmployeeForm.css';
+import { useSelector } from 'react-redux';
 
-export default function EmployeeList({ employees }) {
-  if (employees.length === 0) {
-    return <p className="no-employees">No employees added yet.</p>;
-  }
+function EmployeeList() {
+  const employees = useSelector((state) => state.employee.employees);
+
   return (
-    <div className="employee-list">
-      <h3>Saved Employees</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th><th>Position</th><th>Department</th><th>Email</th><th>Start Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {employees.map((emp, i) => (
-            <tr key={i}>
-              <td>{emp.name}</td>
-              <td>{emp.position}</td>
-              <td>{emp.department}</td>
-              <td>{emp.email}</td>
-              <td>{emp.startDate}</td>
-            </tr>
+    <div className="employee-table">
+      <h2>Employee List</h2>
+      {employees.length === 0 ? (
+        <p>No employees added yet.</p>
+      ) : (
+        <ul>
+          {employees.map((emp, index) => (
+            <li key={index}>
+              <strong>{emp.name}</strong> - {emp.position} ({emp.department})
+            </li>
           ))}
-        </tbody>
-      </table>
+        </ul>
+      )}
     </div>
   );
 }
+
+export default EmployeeList;
